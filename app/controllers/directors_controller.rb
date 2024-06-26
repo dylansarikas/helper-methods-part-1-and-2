@@ -1,4 +1,10 @@
 class DirectorsController < ApplicationController
-  def index
+  def new
+    @director = Director.new
   end
+
+  def index
+    @directors = Director.order(created_at: :desc)
+  end
+
 end
