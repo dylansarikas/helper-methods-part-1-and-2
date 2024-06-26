@@ -23,8 +23,8 @@ class MoviesController < ApplicationController
 
   def create
     @movie = Movie.new
-    @movie.title = params.fetch("title")
-    @movie.description = params.fetch("description")
+    @movie.title = params[:title]
+    @movie.description = params[:description]
 
     if @movie.valid?
       @movie.save
@@ -41,8 +41,8 @@ class MoviesController < ApplicationController
   def update
     movie = Movie.find(params[:id])
 
-    movie.title = params.fetch("title")
-    movie.description = params.fetch("description")
+    movie.title = params[:title]
+    movie.description = params[:description]
 
     if movie.valid?
       movie.save
