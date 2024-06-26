@@ -31,25 +31,27 @@
   </tr>
 
   <% @directors.each do |director| %>
-    <td>
-      <%= director.id %>
-    </td>
+    <tr>
+      <td>
+        <%= director.id %>
+      </td>
 
-    <td>
-      <%= director.name %>
-    </td>
+      <td>
+        <%= director.name %>
+      </td>
 
-    <td>
-      <%= director.dob %>
-    </td>
+      <td>
+        <%= director.dob %>
+      </td>
 
-    <td>
-      <%= director.films %>
-    </td>
+      <td>
+        <%= director.films %>
+      </td>
 
-    <td>
-      <%= link_to "Show Directors", director %>
-    </td>
+      <td>
+        <%= link_to "Show Directors", director %>
+      </td>     
+    </tr>
   <% end %>
 
 </table>
