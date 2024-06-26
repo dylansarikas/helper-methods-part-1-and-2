@@ -5,7 +5,7 @@
 <hr>
 
 <div>
-  
+  <%= link_to 'Add a new director', new_director_path %>
 </div>
 
 <table>
@@ -30,5 +30,26 @@
     </th>
   </tr>
 
-  
+  <% @directors.each do |director| %>
+    <tr>
+      <%= director.id %>
+    </tr>
+
+    <tr>
+      <%= director.name %>
+    </tr>
+
+    <tr>
+      <%= director.dob %>
+    </tr>
+
+    <tr>
+      <%= director.films %>
+    </tr>
+
+    <td>
+      <%= link_to "Show Directors", director %>
+    </td>
+  <% end %>
+
 </table>
