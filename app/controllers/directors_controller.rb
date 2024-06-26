@@ -22,6 +22,10 @@ class DirectorsController < ApplicationController
   def show
     @director = Director.find(params[:id])
   end
+
+  def edit
+    @director = Director.find(params[:id])
+  end
   
   def director_params
     params.require(:director).permit(:name, :dob, :bio, :films)
