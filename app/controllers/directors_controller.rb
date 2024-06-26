@@ -6,5 +6,5 @@ class DirectorsController < ApplicationController
   def index
     @directors = Director.order(created_at: :desc)
   end
-
+  
 end
