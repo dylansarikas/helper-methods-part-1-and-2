@@ -26,6 +26,26 @@ class DirectorsController < ApplicationController
   def edit
     @director = Director.find(params[:id])
   end
+
+  def update
+    director = Director.find(params[:id])
+    director.update!(director_params)
+
+    if director.valid?
+      director.save
+      redirect_to director_url(director), notice: "Director updated successfully"
+    else
+      redirect_to director_url(director), notice: "Director failed to update successfully"
+    end
+  end
+
+  def destroy
+    director = Director.find(params[:id])
+
+    director.destroy
+
+    redirect_to directors_url, notice: "Director murdered softly"
+  end
   
   def director_params
     params.require(:director).permit(:name, :dob, :bio, :films)
