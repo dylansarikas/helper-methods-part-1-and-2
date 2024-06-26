@@ -1,0 +1,57 @@
+<h1>
+  List of Directors
+</h1>
+
+<hr>
+
+<div>
+  <%= link_to 'Add a new director', new_director_path %>
+</div>
+
+<table>
+  <tr>
+    <th>
+      ID
+    </th>
+
+    <th>
+      Name
+    </th>
+
+    <th>
+      DOB
+    </th>
+
+    <th> 
+      Films
+    </th>
+
+    <th>
+    </th>
+  </tr>
+
+  <% @directors.each do |director| %>
+    <tr>
+      <td>
+        <%= director.id %>
+      </td>
+
+      <td>
+        <%= director.name %>
+      </td>
+
+      <td>
+        <%= director.dob %>
+      </td>
+
+      <td>
+        <%= director.films %>
+      </td>
+
+      <td>
+        <%= link_to "Show Directors", director %>
+      </td>     
+    </tr>
+  <% end %>
+
+</table>

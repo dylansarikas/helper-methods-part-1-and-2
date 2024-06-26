@@ -1,0 +1,51 @@
+<div>
+  <div>
+    <h1>
+        Director #<%= @director.id %> details
+    </h1>
+
+    <div>
+      <div>
+        <%= link_to "Go back", directors_path %>
+      </div>
+
+      <div>
+        <%= link_to "Edit Director", edit_director_path(@director) %>
+      </div>
+      
+      <div>
+        <%= link_to "Delete Director", @director, data: { turbo_method: :delete } %>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Name
+      </dt>
+      <dd>
+        <%= @director.name %>
+      </dd>
+
+      <dt>
+        DOB
+      </dt>
+      <dd>
+        <%= @director.dob %>
+      </dd>
+
+      <dt>
+        Films
+      </dt>
+      <dd>
+        <%= @director.films %>
+      </dd>
+
+      <dt>
+        Bio
+      </dt>
+      <dd>
+        <%= @director.bio %>
+      </dd>
+    </dl>
+  </div>
+</div>
